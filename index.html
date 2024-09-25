@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 30px;
+            background-image:url("image.webp") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        section {
+            width: 432px;
+            /* border: 1px solid black; */
+            /* background-color: white; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .gameboxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            display: none;
+            align-items: center;
+            gap: 0.2em;
+            padding: 1em;
+            background-color:rgba(76, 214, 214,0.6);
+            background-position: center;
+            background-size: cover;
+        }
+        .box {
+            width: 96px;
+            height: 96px;
+            background-color: rgba(63, 104, 143,0.9);
+            text-align: center;
+            border-radius: 8px;
+            font-size: 75px;
+        }
+        .score{
+            /* background-color: white; */
+            color:white;
+            display: none;
+            padding: 16px;
+            font-size: 2rem;
+        }
+        input {
+            /* display: none; */
+            padding: 1em;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            border-radius: 8px;
+        }
+        h1{
+            color: red;
+            font-size: 36px;
+            display: none;
+        }
+
+        .result{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            transform: translateX(-50%);
+            text-align: center;
+            background-color:rgb(78, 73, 73);
+            color: black;
+            scale: 0;
+            transition: 500ms;
+            width: 395px;
+            padding: 20px;
+            font-size: 2rem;
+            height: 150px;
+        }
+        #restartBttn{
+            display: none;
+            position: absolute;
+            top: 62%;
+            right: 40%;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: chartreuse;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <section id="game">
+        <input type="button" value="PLAY GAME" onclick="startGame()" id="startBttn" />
+        <h1 id="header">MINE SWEEPER</h1>
+        <div class="score">Score:<span id="score">0</span></div>
+        <div class="gameboxes" id="gameboxes" >
+            <div class="box" id="0" onclick="openBoxes(this)"></div>
+            <div class="box" id="1" onclick="openBoxes(this)"></div>
+            <div class="box" id="2" onclick="openBoxes(this)"></div>
+            <div class="box" id="3" onclick="openBoxes(this)"></div>
+            <div class="box" id="4" onclick="openBoxes(this)"></div>
+            <div class="box" id="5" onclick="openBoxes(this)"></div>
+            <div class="box" id="6" onclick="openBoxes(this)"></div>
+            <div class="box" id="7" onclick="openBoxes(this)"></div>
+            <div class="box" id="8" onclick="openBoxes(this)"></div>
+            <div class="box" id="9" onclick="openBoxes(this)"></div>
+            <div class="box" id="10" onclick="openBoxes(this)"></div>
+            <div class="box" id="11" onclick="openBoxes(this)"></div>
+            <div class="box" id="12" onclick="openBoxes(this)"></div>
+            <div class="box" id="13" onclick="openBoxes(this)"></div>
+            <div class="box" id="14" onclick="openBoxes(this)"></div>
+            <div class="box" id="15" onclick="openBoxes(this)"></div>
+        </div>
+
+    </section>
+    <div class="result" id="result">
+        <h1 id="gameStatus"></h1>
+        <p id="message"></p>
+        <button id="restartBttn" onclick="location.reload()">Restart</button>
+    </div>
+    
+    <audio id="blastAudio" src="blast.mp3"></audio>
+</body>
+<script src="script.js"></script>
+
+</html>
